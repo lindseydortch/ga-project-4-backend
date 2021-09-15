@@ -1,9 +1,11 @@
 from django.db import models
+from datetime import datetime 
 
 # Create your models here.
 class Profiles(models.Model):
   first_name = models.CharField(max_length=100)
   photo = models.CharField(max_length=5000)
+  birthday = models.DateField(auto_now=False, default=datetime.today)
   bio = models.CharField(max_length=500)
   job_title = models.CharField(max_length=100, blank=True)
   company = models.CharField(max_length=100, blank=True)
@@ -24,3 +26,6 @@ class Profiles(models.Model):
   kids = models.CharField(max_length=100)
   politics = models.CharField(max_length=100)
   created_at = models.DateTimeField(auto_now=True)
+
+  def __str__(self):
+    return self.name

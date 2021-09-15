@@ -2,6 +2,6 @@ from rest_framework import routers
 from .api import ProfilesViewSet
 
 router = routers.DefaultRouter()
-router.register('profiles', ProfilesViewSet, 'profiles')
+router.register('api/profiles', ProfilesViewSet, 'profiles')
 
 urlpatterns = router.urls
